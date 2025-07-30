@@ -1,42 +1,111 @@
+
+@import "tailwindcss";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  --font-lexend: 'Lexend', sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-lexend);
+  font-weight: 300; /* Light 300 作为默认 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.font-lexend-extralight {
+  font-family: "Lexend", sans-serif;
+  font-weight: 200;
+  font-style: normal;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.font-lexend-light {
+  font-family: "Lexend", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.font-lexend-regular {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-londrina-shadow {
+  font-family: "Londrina Shadow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-londrina-solid-light {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 300;
+}
+
+.font-londrina-solid-bold {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 900;
+}
+
+.font-nanum {
+  font-family: var(--font-nanum-pen), cursive;
+}
+
+/* 全局背景动画 */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
   }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+.animation-delay-8000 {
+  animation-delay: 8s;
+}
+
+/* 减少动画效果的媒体查询 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob {
+    animation: none;
+  }
+}
+
+/* 全局页面样式优化 */
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 确保内容在背景之上 */
+main {
+  position: relative;
+  z-index: 10;
+}
+
+section {
+  position: relative;
+  z-index: 10;
 }
