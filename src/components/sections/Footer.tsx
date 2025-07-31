@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="bg-white/20 backdrop-blur-lg border-t border-gray-200 py-8">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-gray-600">
             © 2025 Aria Cui. All rights reserved.

@@ -9,7 +9,7 @@ const Skills = () => {
   const skills = ['js','ts','react','nextjs','tailwind','nodejs','docker','aws','gcp','cpp','java','figma'];
   
   return (
-    <section id="skills" className="py-20 px-6">
+    <section id="skills" className="min-h-screen py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <SectionTitle 
           title="Tech Stacks" 

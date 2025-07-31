@@ -1,30 +1,187 @@
 'use client';
 
+import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
+import Image from "next/image";
 import SectionTitle from "../ui/SectionTitle";
 import Button from "../ui/Button";
 import AnimatedDiv from "../ui/AnimatedDiv";
 import Card from "../ui/Card";
+import SocialLinksCircle from "../ui/SocialLinksCircle";
+import { socialLinks } from "../../data/socialLinks";
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // prevent multiple submissions
+    const now = Date.now();
+    if (now - lastSubmitTime < 5000) {
+      setMessage('Please wait a second before submitting again');
+      setFormStatus('error');
+      return;
+    }
+    
+    setFormStatus('sending');
+    setLastSubmitTime(now);
+    setMessage('');
+
+    try {
+      // EmailJS 配置 - 从环境变量获取
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+      
+      // 验证配置是否存在
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS Configuration Error');
+      }
+      
+      // 发送邮件
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        form.current!,
+        publicKey
+      );
+      
+      setFormStatus('success');
+      setMessage('Thanks for your message! I will reply as soon as possible.');
+      
+      // 重置表单
+      if (form.current) {
+        form.current.reset();
+      }
+      
+    } catch (error) {
+      setFormStatus('error');
+      
+      if (error instanceof Error) {
+        setMessage(error.message);
+      } else {
+        setMessage('Failed to send email. Please try again later or send an email directly to ccjwcui@gmail.com');
+      }
+    }
+
+    // reset form status after 5 seconds
+    setTimeout(() => {
+      setFormStatus('idle');
+      setMessage('');
+    }, 5000);
+  };
+
   return (
-    <section id="contact" className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="min-h-screen py-20 px-6">
+      <div className="w-full max-w-7xl mx-auto">
         <SectionTitle 
-          title="Let's Work Together" 
-          subtitle="Looking for full-time roles as a Software Engineer or Full Stack Developer. Let's chat!"
+          title="Let's Build Something Great Together" 
+          subtitle="I'm currently seeking full-time opportunities as a Software Engineer or Full Stack Developer. Feel free to reach out!"
         />
-        
-        <AnimatedDiv delay={0.2}>
-          <Card className="p-8 text-center">
-            <p className="text-lg text-gray-700 mb-6">
-              I'm always interested in hearing about new opportunities and interesting projects.
-            </p>
+
+        <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
+          <AnimatedDiv delay={0.2}>
+            <div className="flex justify-center relative">
+              <Image 
+                src="/aria-thinking-image.png" 
+                alt="Contact Avatar"
+                width={400}
+                height={400}
+                className="rounded-xl"
+                priority
+              />
+              
+              {/* 环绕图片的社交链接圆圈 */}
+              <SocialLinksCircle 
+                links={socialLinks} 
+                radius={220}
+                className="pointer-events-auto"
+              />
+            </div>
             
-            <Button href="mailto:ccjwcui@email.com" variant="primary" size="lg">
-              Get In Touch
-            </Button>
-          </Card>
-        </AnimatedDiv>
+          </AnimatedDiv>
+
+          <AnimatedDiv delay={0.4}>
+            <Card className="p-8">
+              
+              {message && (
+                <div className={`mb-4 p-3 rounded-lg text-center transition-all duration-300 ${
+                  formStatus === 'success' 
+                    ? 'bg-green-100 text-green-700 border border-green-300' 
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                }`}>
+                  {message}
+                </div>
+              )}
+              
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-gray-700 mb-2 font-medium">
+                    Name *
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    placeholder="Enter your Name"
+                    required
+                    disabled={formStatus === 'sending'}
+                    maxLength={50}
+                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-gray-700 mb-2 font-medium">
+                    Email *
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    required
+                    disabled={formStatus === 'sending'}
+                    maxLength={100}
+                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">
+                    Message *
+                  </label>
+                  <textarea 
+                    id="message"
+                    name="message" 
+                    rows={5}
+                    placeholder="Curious about working together? I'd love to hear from you ✨"
+                    required
+                    disabled={formStatus === 'sending'}
+                    maxLength={1000}
+                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  ></textarea>
+                </div>
+                
+                <Button 
+                  type="submit"
+                  variant="primary" 
+                  size="lg"
+                  className="w-full"
+                  disabled={formStatus === 'sending'}
+                >
+                  {formStatus === 'sending' ? 'Sending...' : 
+                   formStatus === 'success' ? 'Sent! ✓' : 'Send Message ✉️'}
+                </Button>
+              </form>
+              
+            </Card>
+          </AnimatedDiv>
+        </div>
       </div>
     </section>
   );

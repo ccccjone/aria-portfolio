@@ -4,7 +4,7 @@ import SectionTitle from "../ui/SectionTitle";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-6">
+    <section id="experience" className="min-h-screen py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <SectionTitle title="Experience" />
         <p className="text-lg text-gray-700 mb-6">
