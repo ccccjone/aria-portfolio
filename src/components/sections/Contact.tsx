@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 import Image from "next/image";
 import SectionTitle from "../ui/SectionTitle";
@@ -15,6 +15,26 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
   const [lastSubmitTime, setLastSubmitTime] = useState(0);
+  const [radius, setRadius] = useState(220);
+
+  useEffect(() => {
+    const updateRadius = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setRadius(160); 
+      } else if (width < 768) {
+        setRadius(220)
+      } else if (width < 1120) {
+        setRadius(160); 
+      } else {
+        setRadius(220);
+      }
+    };
+
+    updateRadius();
+    window.addEventListener('resize', updateRadius);
+    return () => window.removeEventListener('resize', updateRadius);
+  }, []);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -91,14 +111,14 @@ const Contact = () => {
                 alt="Contact Avatar"
                 width={400}
                 height={400}
-                className="rounded-xl"
+                className="rounded-xl max-w-full h-auto"
                 priority
               />
               
               {/* 环绕图片的社交链接圆圈 */}
               <SocialLinksCircle 
                 links={socialLinks} 
-                radius={220}
+                radius={radius}
                 className="pointer-events-auto"
               />
             </div>

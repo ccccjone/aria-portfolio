@@ -16,7 +16,6 @@ const About = () => {
         />
         
         <div className="grid grid-cols-12 gap-8">
-          {/* 左侧：个人照片 (4/12 = 1/3) */}
           <AnimatedDiv delay={0.2} direction="left" className="col-span-12 md:col-span-4">
             <motion.div 
               className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[600px] sticky top-8"
@@ -35,7 +34,6 @@ const About = () => {
             </motion.div>
           </AnimatedDiv>
           
-          {/* 右侧：关于我的文字 (8/12 = 2/3) */}
           <AnimatedDiv delay={0.3} direction="right" className="col-span-12 md:col-span-8">
             <Card className="p-0 h-[600px] overflow-hidden">
               <div className="p-8 h-full overflow-y-auto">
