@@ -42,17 +42,17 @@ const About = () => {
                   {/* title */}
                   <div className="mb-6">
                     <h1 className="text-3xl font-bold text-gray-900 mb-2 flex items-center">
-                      👋 <span className="ml-2">Hi, I'm Aria</span>
+                      👋 <span className="ml-2">Hi, I&apos;m Aria</span>
                     </h1>
                     <p className="text-xl text-gray-600 leading-relaxed">
-                      A passionate <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Full Stack Developer</span> with a Master's degree in Computer Science (GPA 4.0, Phi Kappa Phi) from the University of the Pacific.
+                      A passionate <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Full Stack Developer</span> with a Master&apos;s degree in Computer Science (GPA 4.0, Phi Kappa Phi) from the University of the Pacific.
                     </p>
                   </div>
 
                   {/* subtitle */}
                   <div className="bg-gray-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
                     <p className="text-gray-700 italic text-lg leading-relaxed m-0">
-                      "I'm passionate about building thoughtful, scalable applications that make technology more human."
+                      &quot;I&apos;m passionate about building thoughtful, scalable applications that make technology more human.&quot;
                     </p>
                   </div>
 
@@ -99,7 +99,7 @@ const About = () => {
                       🚀 <span className="ml-2">Currently Available</span>
                     </h2>
                     <p className="text-green-700 leading-relaxed m-0">
-                      I'm currently open to full-time roles as a <strong>Software Engineer</strong> or <strong>Full Stack Developer</strong>. If you're looking for someone who builds with care and thinks end-to-end — let's connect!
+                      I&apos;m currently open to full-time roles as a <strong>Software Engineer</strong> or <strong>Full Stack Developer</strong>. If you&apos;re looking for someone who builds with care and thinks end-to-end — let&apos;s connect!
                     </p>
                   </div>
 
@@ -109,7 +109,7 @@ const About = () => {
                       🎮 <span className="ml-2">Beyond Coding</span>
                     </h2>
                     <p className="text-gray-700 leading-relaxed">
-                      When I'm not coding, I'm probably out on a hiking trail, tracing new corners of the world like a curious cartographer, lost in melodies or deep into a beautifully crafted game world.
+                      When I&apos;m not coding, I&apos;m probably out on a hiking trail, tracing new corners of the world like a curious cartographer, lost in melodies or deep into a beautifully crafted game world.
                     </p>
                   </div>
 

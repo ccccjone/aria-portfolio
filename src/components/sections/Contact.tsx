@@ -63,7 +63,7 @@ const Contact = () => {
       }
       
       // send email
-      const result = await emailjs.sendForm(
+      await emailjs.sendForm(
         serviceId,
         templateId,
         form.current!,
@@ -100,7 +100,7 @@ const Contact = () => {
       <div className="w-full max-w-7xl mx-auto">
         <SectionTitle 
           title="Let's Build Something Great Together" 
-          subtitle="I'm currently seeking full-time opportunities as a Software Engineer or Full Stack Developer. Feel free to reach out!"
+          subtitle="I&apos;m currently seeking full-time opportunities as a Software Engineer or Full Stack Developer. Feel free to reach out!"
         />
 
         <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">

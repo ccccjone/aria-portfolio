@@ -38,7 +38,7 @@ const Hero = () => {
             className="space-y-2"
           >
             <p className="text-2xl text-gray-600 font-londrina-solid-light tracking-wide">
-              Hello, I'm
+              Hello, I&apos;m
             </p>
           </motion.div>
 

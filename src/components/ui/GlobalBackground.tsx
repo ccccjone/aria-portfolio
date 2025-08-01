@@ -11,7 +11,7 @@ const GlobalBackground = () => {
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
 
-    let ripples: { x: number; y: number; radius: number; alpha: number; color: string }[] = [];
+    const ripples: { x: number; y: number; radius: number; alpha: number; color: string }[] = [];
 
     const softColors = [
       "rgba(219, 234, 254, 0.08)", // blue-100
