@@ -6,7 +6,7 @@ import ProjectCard from "../ui/ProjectCard";
 import { projects, Project } from '../../data/projectsData';
 
 const Projects = () => {
-  const [focusedProjectId, setFocusedProjectId] = useState(projects[0]?.id || '');
+  const [focusedProjectId, setFocusedProjectId] = useState(projects[0]?.id || 0);
 
   const handlePrevious = () => {
     const currentIndex = projects.findIndex(p => p.id === focusedProjectId);
@@ -20,7 +20,7 @@ const Projects = () => {
     setFocusedProjectId(projects[nextIndex].id);
   };
 
-  const handleCardClick = (projectId: string) => {
+  const handleCardClick = (projectId: number) => {
     setFocusedProjectId(projectId);
   };
 
@@ -51,7 +51,7 @@ const Projects = () => {
                     project={project}
                     index={index}
                     isFocused={isFocused}
-                    onClick={handleCardClick}
+                    onClick={(projectId: number) => handleCardClick(projectId)}
                   />
                 );
               })}

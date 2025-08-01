@@ -7,7 +7,7 @@ interface ProjectCardProps {
   project: Project;
   index: number;
   isFocused: boolean;
-  onClick: (projectId: string) => void;
+  onClick: (projectId: number) => void;
 }
 
 const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) => {
