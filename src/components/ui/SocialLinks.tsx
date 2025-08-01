@@ -52,7 +52,7 @@ const SocialLinks = ({
             key={link.alt}
             href={link.href}
             {...linkProps}
-            className={`group relative p-4 bg-white rounded-2xl ${hoverColorClasses[link.hoverColor || 'blue']} transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-100`}
+            className={`group relative p-1 lg:p-4 bg-white rounded-2xl ${hoverColorClasses[link.hoverColor || 'blue']} transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-100`}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,6 @@
-# 🌐 Personal Portfolio
+# Aria's Portfolio
 
-A modern and responsive developer portfolio built with **Next.js** and **Framer Motion**, designed to showcase projects, experience, and skills with engaging animations and smooth user experience.
+Welcome to my portfolio! I'm Aria, a passionate developer with a love for creating engaging and user-friendly web experiences. This portfolio showcases my projects, skills, and experience in web development.
 
 ![Portfolio Screenshot](./public/aria-portfolio-screenshot.png)
 

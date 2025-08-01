@@ -8,17 +8,17 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen py-20 px-6">
+    <section id="about" className="min-h-screen py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <SectionTitle 
           title="About Me" 
           subtitle="Get to know me better"
         />
         
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-12 gap-4 sm:gap-8">
           <AnimatedDiv delay={0.2} direction="left" className="col-span-12 md:col-span-4">
             <motion.div 
-              className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[600px] sticky top-8"
+              className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[400px] sm:h-[500px] md:h-[600px] sticky top-8 mx-auto max-w-sm md:max-w-none"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -35,16 +35,16 @@ const About = () => {
           </AnimatedDiv>
           
           <AnimatedDiv delay={0.3} direction="right" className="col-span-12 md:col-span-8">
-            <Card className="p-0 h-[600px] overflow-hidden">
-              <div className="p-8 h-full overflow-y-auto">
-                <div className="prose prose-lg max-w-none">
+            <Card className="p-0 h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
+              <div className="p-4 sm:p-6 md:p-8 h-full overflow-y-auto">
+                <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
                   
                   {/* title */}
-                  <div className="mb-6">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2 flex items-center">
+                  <div className="mb-4 sm:mb-6">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 flex items-center">
                       👋 <span className="ml-2">Hi, I&apos;m Aria</span>
                     </h1>
-                    <p className="text-xl text-gray-600 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                       A passionate <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Full Stack Developer</span> with a Master&apos;s degree in Computer Science (GPA 4.0, Phi Kappa Phi) from the University of the Pacific.
                     </p>
                   </div>

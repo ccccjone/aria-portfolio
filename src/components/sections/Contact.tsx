@@ -20,7 +20,9 @@ const Contact = () => {
   useEffect(() => {
     const updateRadius = () => {
       const width = window.innerWidth;
-      if (width < 640) {
+      if (width < 420) {
+        setRadius(120); 
+      } else if (width < 640) {
         setRadius(160); 
       } else if (width < 768) {
         setRadius(220)

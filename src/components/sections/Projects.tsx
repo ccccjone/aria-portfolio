@@ -39,7 +39,7 @@ const Projects = () => {
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(calc(50% - ${focusedIndex * 416 + 208}px))`,
+                transform: `translateX(calc(50% - ${focusedIndex * (window.innerWidth < 640 ? 336 : 416) + (window.innerWidth < 640 ? 168 : 208)}px))`,
               }}
             >
               {projects.map((project, index) => {

@@ -27,8 +27,8 @@ export const projects: Project[] = [
     image: "/aria-project-portfolio.png",
     technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "EmailJS", "AWS Amplify"],
     githubLink: "https://github.com/ccccjone/aria-portfolio",
-    liveLink: "https://github.com/ccccjone/aria-portfolio",
-    status: "in-development"
+    liveLink: "https://ariacui.me/",
+    status: "completed"
   },
   {
     id: 3,

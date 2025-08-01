@@ -68,6 +68,12 @@ body {
 
 .animate-blob {
   animation: blob 7s infinite;
+  will-change: transform;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
 }
 
 .animation-delay-2000 {
