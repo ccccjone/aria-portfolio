@@ -14,7 +14,6 @@ const RGBHalo = ({
   intensity = 'medium',
   className = ''
 }: RGBHaloProps) => {
-  // 支持的颜色池
   const colorPool = [
     'rgba(99, 102, 241, 0.4)',   // indigo
     'rgba(236, 72, 153, 0.4)',   // pink
@@ -25,7 +24,7 @@ const RGBHalo = ({
     'rgba(168, 85, 247, 0.4)',   // purple
   ];
 
-  // 每次渲染该组件时生成随机颜色组合
+  // randomize color selection
   const colors = useMemo(() => {
     const shuffled = [...colorPool].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 3);
@@ -46,7 +45,7 @@ const RGBHalo = ({
 
   return (
     <div className={`absolute ${sizeMap} rounded-full opacity-0 ${opacityMap} transition duration-500 ${className}`}>
-      {/* 外圈旋转渐变 */}
+      {/* outer ring */}
       <motion.div
         className="absolute inset-0 rounded-full blur-sm"
         style={{
@@ -60,7 +59,7 @@ const RGBHalo = ({
         }}
       />
 
-      {/* 中心光点呼吸 */}
+      {/* center point */}
       <motion.div
         className="absolute inset-4 rounded-full blur-xs"
         style={{

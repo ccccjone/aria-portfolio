@@ -7,7 +7,7 @@
 
 body {
   font-family: var(--font-lexend);
-  font-weight: 300; /* Light 300 作为默认 */
+  font-weight: 300; /* Light 300 as default */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -50,7 +50,7 @@ body {
   font-family: var(--font-nanum-pen), cursive;
 }
 
-/* 全局背景动画 */
+/* Global background animation */
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -86,26 +86,24 @@ body {
   animation-delay: 8s;
 }
 
-/* 减少动画效果的媒体查询 */
 @media (prefers-reduced-motion: reduce) {
   .animate-blob {
     animation: none;
   }
 }
 
-/* 全局页面样式优化 */
 body {
   position: relative;
   overflow-x: hidden;
 }
 
-/* 确保内容在背景之上 */
+/* Ensure content is above background */
 main {
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }
 
 section {
   position: relative;
-  z-index: 10;
+  z-index: 5;
 }

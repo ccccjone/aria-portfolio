@@ -52,17 +52,17 @@ const Contact = () => {
     setMessage('');
 
     try {
-      // EmailJS 配置 - 从环境变量获取
+       // EmailJS configuration
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
       
-      // 验证配置是否存在
+      // validate configuration
       if (!serviceId || !templateId || !publicKey) {
         throw new Error('EmailJS Configuration Error');
       }
       
-      // 发送邮件
+      // send email
       const result = await emailjs.sendForm(
         serviceId,
         templateId,
@@ -73,7 +73,7 @@ const Contact = () => {
       setFormStatus('success');
       setMessage('Thanks for your message! I will reply as soon as possible.');
       
-      // 重置表单
+      // reset form
       if (form.current) {
         form.current.reset();
       }
@@ -115,7 +115,6 @@ const Contact = () => {
                 priority
               />
               
-              {/* 环绕图片的社交链接圆圈 */}
               <SocialLinksCircle 
                 links={socialLinks} 
                 radius={radius}

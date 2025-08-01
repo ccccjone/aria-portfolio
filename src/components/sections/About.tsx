@@ -37,10 +37,9 @@ const About = () => {
           <AnimatedDiv delay={0.3} direction="right" className="col-span-12 md:col-span-8">
             <Card className="p-0 h-[600px] overflow-hidden">
               <div className="p-8 h-full overflow-y-auto">
-                {/* Notion风格的文字内容 */}
                 <div className="prose prose-lg max-w-none">
                   
-                  {/* 标题部分 */}
+                  {/* title */}
                   <div className="mb-6">
                     <h1 className="text-3xl font-bold text-gray-900 mb-2 flex items-center">
                       👋 <span className="ml-2">Hi, I'm Aria</span>
@@ -50,14 +49,14 @@ const About = () => {
                     </p>
                   </div>
 
-                  {/* 核心理念 */}
+                  {/* subtitle */}
                   <div className="bg-gray-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
                     <p className="text-gray-700 italic text-lg leading-relaxed m-0">
                       "I'm passionate about building thoughtful, scalable applications that make technology more human."
                     </p>
                   </div>
 
-                  {/* 技术栈 */}
+                  {/* skills */}
                   <div className="mb-6">
                     <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
                       💻 <span className="ml-2">Technical Expertise</span>
@@ -74,7 +73,7 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* 安全专长 */}
+                  {/* security */}
                   <div className="mb-6">
                     <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
                       🔐 <span className="ml-2">Security Focus</span>
@@ -84,7 +83,7 @@ const About = () => {
                     </p>
                   </div>
 
-                  {/* 工作经验 */}
+                  {/* work */}
                   <div className="mb-6">
                     <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
                       🤝 <span className="ml-2">Professional Experience</span>
@@ -94,7 +93,7 @@ const About = () => {
                     </p>
                   </div>
 
-                  {/* 当前状态 */}
+                  {/* available */}
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
                     <h2 className="text-xl font-semibold text-green-800 mb-2 flex items-center">
                       🚀 <span className="ml-2">Currently Available</span>
@@ -104,7 +103,7 @@ const About = () => {
                     </p>
                   </div>
 
-                  {/* 个人兴趣 */}
+                  {/* hobby */}
                   <div className="mb-4">
                     <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
                       🎮 <span className="ml-2">Beyond Coding</span>

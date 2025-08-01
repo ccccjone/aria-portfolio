@@ -74,10 +74,10 @@ const GlobalBackground = () => {
 
   return (
     <>
-      {/* 全局背景渐变 */}
+      {/* Global background gradient */}
       <div className="fixed inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50 -z-50" />
       
-      {/* 动态背景元素 */}
+      {/* Dynamic background elements */}
       <div className="fixed inset-0 overflow-hidden -z-40">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-60 animate-blob animation-delay-2000" />
@@ -86,7 +86,7 @@ const GlobalBackground = () => {
         <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-8000" />
       </div>
 
-      {/* 全局鼠标涟漪效果 */}
+      {/* Global mouse ripple effect */}
       <canvas 
         id="global-ripple-canvas" 
         className="fixed inset-0 w-full h-full pointer-events-none -z-30" 

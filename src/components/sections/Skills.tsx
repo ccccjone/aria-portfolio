@@ -42,7 +42,7 @@ const Skills = () => {
                         scale: 1.15,
                         transition: { duration: 0.2 }
                     }}
-                    className="group relative z-10 flex justify-center items-center flex-shrink-0" // ✅ z-10 关键
+                    className="group relative z-10 flex justify-center items-center flex-shrink-0"
                     >
                     <RGBHalo size="md" intensity="low" />
 
@@ -58,7 +58,7 @@ const Skills = () => {
                     </div>
 
                     {/* Tooltip */}
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-600/70 backdrop-blur-md text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-30 shadow-lg"> {/* ✅ z-30 */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-600/70 backdrop-blur-md text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap z-30 shadow-lg">
                         {skill.name}
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0"></div>
                     </div>

@@ -33,7 +33,7 @@ export default function RootLayout({
       </head>
       <body className={`${lexend.className} font-lexend-light`} suppressHydrationWarning={true}>
         <GlobalBackground />
-        <main className="relative z-10">
+        <main className="relative">
           {children}
         </main>
       </body>
