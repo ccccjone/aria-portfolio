@@ -19,23 +19,28 @@ const Contact = () => {
 
   useEffect(() => {
     const updateRadius = () => {
-      const width = window.innerWidth;
-      if (width < 420) {
-        setRadius(120); 
-      } else if (width < 640) {
-        setRadius(160); 
-      } else if (width < 768) {
-        setRadius(220)
-      } else if (width < 1120) {
-        setRadius(160); 
-      } else {
-        setRadius(220);
+      if (typeof window !== 'undefined') {
+        const width = window.innerWidth;
+        if (width < 420) {
+          setRadius(120);
+        } else if (width < 640) {
+          setRadius(160);
+        } else if (width < 768) {
+          setRadius(220);
+        } else if (width < 1120) {
+          setRadius(160);
+        } else {
+          setRadius(220);
+        }
       }
     };
 
     updateRadius();
-    window.addEventListener('resize', updateRadius);
-    return () => window.removeEventListener('resize', updateRadius);
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateRadius);
+      return () => window.removeEventListener('resize', updateRadius);
+    }
   }, []);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {

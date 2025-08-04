@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { SocialLinkData } from "../../data/socialLinks";
 
 interface SocialLinksCircleProps {
@@ -16,6 +17,12 @@ const SocialLinksCircle = ({
   radius = 180, 
   className = "" 
 }: SocialLinksCircleProps) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const hoverColorClasses = {
     blue: 'hover:bg-blue-50 hover:border-blue-300',
     gray: 'hover:bg-gray-50 hover:border-gray-300',
@@ -28,8 +35,9 @@ const SocialLinksCircle = ({
     <div className={`absolute inset-0 ${className}`}>
       {links.map((link, index) => {
         const angle = (index / links.length) * 2 * Math.PI;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
+        
+        const x = Math.round(Math.cos(angle) * radius * 100) / 100;
+        const y = Math.round(Math.sin(angle) * radius * 100) / 100;
 
         return (
           <motion.a
@@ -39,9 +47,12 @@ const SocialLinksCircle = ({
             rel={link.isExternal === false ? undefined : "noopener noreferrer"}
             title={link.alt}
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ 
+              opacity: isClient ? 1 : 0, 
+              scale: isClient ? 1 : 0 
+            }}
             transition={{ 
-              delay: index * 0.1 + 0.5,
+              delay: isClient ? (index * 0.1 + 0.5) : 0,
               type: "spring",
               stiffness: 200,
               damping: 20

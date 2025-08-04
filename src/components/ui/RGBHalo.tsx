@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 interface RGBHaloProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -14,21 +14,32 @@ const RGBHalo = ({
   intensity = 'medium',
   className = ''
 }: RGBHaloProps) => {
-  const colorPool = [
-    'rgba(99, 102, 241, 0.4)',   // indigo
-    'rgba(236, 72, 153, 0.4)',   // pink
-    'rgba(34, 197, 94, 0.4)',    // green
-    'rgba(253, 224, 71, 0.4)',   // yellow
-    'rgba(59, 130, 246, 0.4)',   // blue
-    'rgba(244, 114, 182, 0.4)',  // rose
-    'rgba(168, 85, 247, 0.4)',   // purple
-  ];
+  const [isClient, setIsClient] = useState(false);
 
-  // randomize color selection
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Avoid hydration mismatch by using a fixed color set for SSR
   const colors = useMemo(() => {
+    const colorPool = [
+      'rgba(99, 102, 241, 0.4)',   // indigo
+      'rgba(236, 72, 153, 0.4)',   // pink
+      'rgba(34, 197, 94, 0.4)',    // green
+      'rgba(253, 224, 71, 0.4)',   // yellow
+      'rgba(59, 130, 246, 0.4)',   // blue
+      'rgba(244, 114, 182, 0.4)',  // rose
+      'rgba(168, 85, 247, 0.4)',   // purple
+    ];
+    
+    if (!isClient) {
+      // Fixed colors for SSR to avoid hydration mismatch
+      return [colorPool[0], colorPool[1], colorPool[2]];
+    }
+    // Shuffle colors for each client render
     const shuffled = [...colorPool].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 3);
-  }, []);
+  }, [isClient]);
 
   const sizeMap = {
     sm: 'w-16 h-16',

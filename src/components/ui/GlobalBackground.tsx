@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 
 const GlobalBackground = () => {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const canvas = document.getElementById("global-ripple-canvas") as HTMLCanvasElement;
     if (!canvas) return;
     

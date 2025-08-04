@@ -1,12 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SectionTitle from "../ui/SectionTitle";
 import ProjectCard from "../ui/ProjectCard";
-import { projects, Project } from '../../data/projectsData';
+import { projects } from '../../data/projectsData';
 
 const Projects = () => {
   const [focusedProjectId, setFocusedProjectId] = useState(projects[0]?.id || 0);
+  const [windowWidth, setWindowWidth] = useState(1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== 'undefined') {
+        setWindowWidth(window.innerWidth);
+      }
+    };
+
+    handleResize();
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   const handlePrevious = () => {
     const currentIndex = projects.findIndex(p => p.id === focusedProjectId);
@@ -39,7 +55,7 @@ const Projects = () => {
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(calc(50% - ${focusedIndex * (window.innerWidth < 640 ? 336 : 416) + (window.innerWidth < 640 ? 168 : 208)}px))`,
+                transform: `translateX(calc(50% - ${focusedIndex * (windowWidth < 640 ? 336 : 416) + (windowWidth < 640 ? 168 : 208)}px))`,
               }}
             >
               {projects.map((project, index) => {
