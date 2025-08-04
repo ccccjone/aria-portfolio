@@ -103,21 +103,21 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-6">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-20 px-6">
       <div className="w-full max-w-7xl mx-auto">
         <SectionTitle 
           title="Let's Build Something Great Together" 
           subtitle="I&apos;m currently seeking full-time opportunities as a Software Engineer or Full Stack Developer. Feel free to reach out!"
         />
 
-        <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
           <AnimatedDiv delay={0.2}>
             <div className="flex justify-center relative">
               <Image 
                 src="/aria-thinking-image.png" 
                 alt="Contact Avatar"
-                width={400}
-                height={400}
+                width={360}
+                height={360}
                 className="rounded-xl max-w-full h-auto"
                 priority
               />
@@ -146,7 +146,7 @@ const Contact = () => {
               
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 mb-2 font-medium">
+                  <label htmlFor="name" className="block text-gray-700 mb-2 text-base font-medium">
                     Name *
                   </label>
                   <input 
@@ -157,7 +157,7 @@ const Contact = () => {
                     required
                     disabled={formStatus === 'sending'}
                     maxLength={50}
-                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 text-sm placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   />
                 </div>
                 
@@ -173,7 +173,7 @@ const Contact = () => {
                     required
                     disabled={formStatus === 'sending'}
                     maxLength={100}
-                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 text-sm placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
                   />
                 </div>
                 
@@ -189,7 +189,7 @@ const Contact = () => {
                     required
                     disabled={formStatus === 'sending'}
                     maxLength={1000}
-                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full p-3 rounded-lg border border-gray-300 text-gray-700 text-sm placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                   ></textarea>
                 </div>
                 

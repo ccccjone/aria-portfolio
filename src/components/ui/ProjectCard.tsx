@@ -40,7 +40,7 @@ const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) =
   return (
     <CardComponent
       {...cardProps}
-      className={`flex-shrink-0 w-80 sm:w-96 mx-2 sm:mx-4 relative overflow-hidden rounded-2xl transition-all duration-500 ${
+      className={`flex-shrink-0 w-72 sm:w-80 mx-2 sm:mx-4 relative overflow-hidden rounded-2xl transition-all duration-500 ${
         isFocused 
           ? 'transform scale-105 shadow-md z-[5]' 
           : 'transform scale-95 cursor-pointer'
@@ -51,7 +51,7 @@ const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) =
       }}
     >
       {/* Card content */}
-      <div className="bg-white/10 backdrop-blur-sm border border-gray-200/20 rounded-2xl overflow-hidden h-[500px] sm:h-[580px] w-full flex flex-col">
+      <div className="bg-white/10 backdrop-blur-sm border border-gray-200/20 rounded-2xl overflow-hidden h-[390px] sm:h-[450px] w-full flex flex-col">
         {/* Project image */}
         <div className="relative h-44 sm:h-56 overflow-hidden">
           <img
@@ -70,16 +70,16 @@ const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) =
         </div>
         
         {/* Card content area */}
-        <div className="p-4 sm:p-8 flex flex-col flex-1">
+        <div className="p-2 sm:p-4 flex flex-col flex-1">
           {/* Project title */}
-          <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mb-2 sm:mb-3">{project.title}</h3>
+          <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-2 sm:mb-3">{project.title}</h3>
           
           {/* Tech stack */}
-          <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-5">
+          <div className="flex flex-wrap gap-1 sm:gap-2 mb-1 sm:mb-3">
             {project.technologies.map((tech, techIndex) => (
               <span 
                 key={techIndex} 
-                className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-blue-500/20 text-blue-700 rounded-md text-xs border border-blue-500/30"
+                className="px-1 sm:px-1.6 py-0.3 sm:py-0.8 bg-blue-500/20 text-blue-700 rounded-md text-[10px] border border-blue-500/30"
               >
                 {tech}
               </span>
@@ -87,7 +87,7 @@ const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) =
           </div>
           
           {/* Project description */}
-          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-3 sm:mb-5 flex-1">
+          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed mb-2 flex-1">
             {project.description}
           </p>
           
@@ -97,7 +97,7 @@ const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) =
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center py-1 px-1 rounded-lg text-sm sm:text-base font-medium transition-colors duration-200 ${
+              className={`flex items-center justify-center py-1 px-1 rounded-lg text-xs sm:text-sm font-medium transition-colors duration-200 ${
                 project.status === 'just-github' ? 'flex-1' : 'min-w-[50px] sm:min-w-[60px]'
               }`}
               onClick={(e) => e.stopPropagation()}
@@ -115,7 +115,7 @@ const ProjectCard = ({ project, index, isFocused, onClick }: ProjectCardProps) =
                 href={project.liveLink || '#'}
                 target={project.liveLink ? '_blank' : '_self'}
                 rel="noopener noreferrer"
-                className={`flex-1 py-2 sm:py-3 px-3 sm:px-5 rounded-lg text-sm sm:text-base font-medium transition-colors duration-200 text-center truncate whitespace-nowrap overflow-hidden ${
+                className={`flex-1 py-1 sm:py-2 px-1 sm:px-3 rounded-lg text-xs sm:text-sm font-medium transition-colors duration-200 text-center truncate whitespace-nowrap overflow-hidden ${
                   project.status === 'completed' && project.liveLink
                     ? 'bg-blue-600/80 hover:bg-blue-500/80 text-white border border-blue-500/50'
                     : 'bg-orange-600/60 hover:bg-orange-500/60 text-orange-100 border border-orange-500/50 cursor-not-allowed'

@@ -21,7 +21,7 @@ interface SocialLinksProps {
 
 const SocialLinks = ({ 
   links, 
-  className = "flex justify-center gap-6 pt-4", 
+  className = "flex justify-center gap-6 pt-1", 
   delay = 0.6,
   gap = "gap-6",
   itemDelay = 0.1
@@ -52,7 +52,7 @@ const SocialLinks = ({
             key={link.alt}
             href={link.href}
             {...linkProps}
-            className={`group relative p-1 lg:p-4 bg-white rounded-2xl ${hoverColorClasses[link.hoverColor || 'blue']} transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-100`}
+            className={`group relative p-1 lg:p-3 bg-white rounded-2xl ${hoverColorClasses[link.hoverColor || 'blue']} transition-all duration-300 shadow-lg hover:shadow-xl border border-gray-100`}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,8 @@ const SocialLinks = ({
             
             {link.icon.startsWith('http') ? (
               <img 
-                width="32" 
-                height="32" 
+                width="30" 
+                height="30" 
                 src={link.icon}
                 alt={link.alt}
                 className="group-hover:scale-110 transition-transform duration-300"
@@ -72,8 +72,8 @@ const SocialLinks = ({
               <Image
                 src={link.icon}
                 alt={link.alt}
-                width={32}
-                height={32}
+                width={30}
+                height={30}
                 className="group-hover:scale-110 transition-transform duration-300"
               />
             )}

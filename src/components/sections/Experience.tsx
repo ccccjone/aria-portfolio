@@ -30,7 +30,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="min-h-screen py-20 px-6 relative">
+    <section id="experience" className="min-h-screen flex items-center justify-center py-20 px-6 relative">
       <div className="max-w-6xl mx-auto">
         <SectionTitle 
           title="Experience" 

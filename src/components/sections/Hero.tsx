@@ -27,9 +27,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20 relative">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-3 relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center space-y-8">
+        <div className="text-center space-y-3">
           {/* Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ const Hero = () => {
             transition={{ delay: 0.1 }}
             className="space-y-2"
           >
-            <p className="text-2xl text-gray-600 font-londrina-solid-light tracking-wide">
+            <p className="text-xl text-gray-600 font-londrina-solid-light tracking-wide">
               Hello, I&apos;m
             </p>
           </motion.div>
@@ -47,7 +47,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-londrina-shadow font-bold text-gray-900 tracking-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-londrina-shadow font-bold text-gray-900 tracking-tight"
           >
             Aria Cui
           </motion.h1>
@@ -65,7 +65,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl md:text-4xl font-londrina-solid-bold font-semibold text-blue-600 tracking-wide"
+              className="text-xl md:text-3xl font-londrina-solid-bold font-semibold text-blue-600 tracking-wide"
             >
               {roles[currentRole]}
             </motion.h2>
@@ -76,7 +76,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-gray-600 leading-relaxed max-w-5xl mx-auto"
+            className="text-lg text-gray-600 leading-relaxed max-w-5xl mx-auto"
           >
             I create meaningful software that solves real problems and makes <span className="font-semibold text-gray-900 bg-yellow-100 px-2 py-1 rounded">technology more human</span>.
           </motion.p>
@@ -110,13 +110,13 @@ const Hero = () => {
             </motion.div>
 
             {/* Avatar */}
-            <div className="relative z-10 w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-blue-400 to-purple-500 p-1">
+            <div className="relative z-10 w-40 h-40 md:w-46 md:h-46 rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gradient-to-br from-blue-400 to-purple-500 p-1">
               <div className="w-full h-full rounded-full overflow-hidden bg-white relative group">
                 <Image
                   src="/aria-avatar.png"
                   alt="Aria Cui"
-                  width={200}
-                  height={200}
+                  width={180}
+                  height={180}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   priority
                 />

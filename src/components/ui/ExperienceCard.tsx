@@ -20,11 +20,11 @@ const ExperienceCard = ({ experience, index, onClick }: ExperienceCardProps) => 
         transition: { duration: 0.2 }
       }}
       onClick={() => onClick(experience)}
-      className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden cursor-pointer border border-gray-200/20 hover:border-gray-300/30 transition-all duration-300 shadow-lg hover:shadow-xl w-80 h-96"
+      className="bg-white/10 backdrop-blur-sm rounded-2xl cursor-pointer border border-gray-200/20 hover:border-gray-300/30 transition-all duration-300 shadow-lg hover:shadow-xl w-72 h-88"
       style={{ aspectRatio: '2/3' }}
     >
-      <div className="relative h-full flex flex-col">
-        <div className="relative h-full overflow-hidden">
+      <div className="relative h-full flex flex-col rounded-2xl">
+        <div className="relative h-full">
           <img
             src={experience.image}
             alt={experience.company}
@@ -35,19 +35,19 @@ const ExperienceCard = ({ experience, index, onClick }: ExperienceCardProps) => 
               target.nextElementSibling?.classList.remove('hidden');
             }}
           />
-          <div className="hidden w-full h-full bg-gradient-to-br from-blue-500/40 to-purple-500/40 flex items-center justify-center text-white font-bold text-4xl">
+          <div className="hidden w-full h-full bg-gradient-to-br from-blue-500/40 to-purple-500/40 flex items-center justify-center text-white font-bold text-3xl">
             {experience.company.charAt(0)}
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           
           <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-            <h3 className="text-xl font-bold mb-2 line-clamp-1 drop-shadow-lg">
+            <h3 className="text-lg font-bold mb-2 drop-shadow-lg">
               {experience.company}
             </h3>
-            <p className="text-blue-200 font-medium text-base drop-shadow-md">
+            <p className="text-blue-200 font-medium text-sm drop-shadow-md">
               {experience.position}
             </p>
-            <p className="text-gray-200 text-sm drop-shadow-md">
+            <p className="text-gray-200 text-xs drop-shadow-md">
               {experience.duration}
             </p>
           </div>

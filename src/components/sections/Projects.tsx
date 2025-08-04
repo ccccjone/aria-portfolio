@@ -43,7 +43,7 @@ const Projects = () => {
   const focusedIndex = projects.findIndex(p => p.id === focusedProjectId);
 
   return (
-    <section id="projects" className="min-h-screen py-20 px-6">
+    <section id="projects" className="min-h-screen flex items-center justify-center py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <SectionTitle 
           title="Projects" 
@@ -55,7 +55,7 @@ const Projects = () => {
             <div 
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(calc(50% - ${focusedIndex * (windowWidth < 640 ? 336 : 416) + (windowWidth < 640 ? 168 : 208)}px))`,
+                transform: `translateX(calc(50% - ${focusedIndex * (windowWidth < 640 ? 304 : 352) + (windowWidth < 640 ? 152 : 176)}px))`,
               }}
             >
               {projects.map((project, index) => {
@@ -74,7 +74,7 @@ const Projects = () => {
             </div>
           </div>
           
-          <div className="flex justify-center items-center gap-8 mt-8">
+          <div className="flex justify-center items-center gap-8 mt-2">
             <button
               onClick={handlePrevious}
               className="p-3 bg-gray-800/30 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-white hover:scale-110"

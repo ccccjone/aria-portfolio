@@ -7,7 +7,7 @@ import { skillCategories } from "../../data/skillsData";
 
 const Skills = () => {
   return (
-    <section id="skills" className="min-h-screen py-20 px-6">
+    <section id="skills" className="min-h-screen flex items-center justify-center py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <SectionTitle 
           title="Tech Stacks" 

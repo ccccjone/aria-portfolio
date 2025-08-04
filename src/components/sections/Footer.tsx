@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-white/20 backdrop-blur-lg border-t border-gray-200 py-8">
+    <footer className="bg-white/20 backdrop-blur-lg border-t border-gray-200 py-8 text-xs">
       <div className="w-full mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-gray-600">
@@ -8,7 +8,7 @@ const Footer = () => {
           </div>
           
           {/* Icon credit */}
-          <div className="text-sm text-gray-500">
+          <div className="text-xs text-gray-500">
             Icons by{' '}
             <a 
               href="https://icons8.com" 

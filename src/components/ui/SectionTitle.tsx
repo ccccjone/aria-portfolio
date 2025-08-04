@@ -10,9 +10,9 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ title, subtitle, size = 'md' }: SectionTitleProps) => {
   const sizeClasses = {
-    sm: 'text-4xl',
-    md: 'text-5xl',
-    lg: 'text-6xl'
+    sm: 'text-3xl',
+    md: 'text-4xl',
+    lg: 'text-5xl'
   };
   
   return (
@@ -20,13 +20,13 @@ const SectionTitle = ({ title, subtitle, size = 'md' }: SectionTitleProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="text-center mb-12"
+      className="text-center mb-10"
     >
       <h2 className={`${sizeClasses[size]} font-londrina-solid-bold text-gray-900 mb-3`}>
         {title}
       </h2>
       {subtitle && (
-        <p className="text-xl text-gray-600 font-londrina-solid-light max-w-2xl mx-auto">{subtitle}</p>
+        <p className="text-lg text-gray-600 font-londrina-solid-light max-w-2xl mx-auto">{subtitle}</p>
       )}
     </motion.div>
   );

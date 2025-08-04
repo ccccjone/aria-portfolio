@@ -19,13 +19,13 @@ const Header = () => {
   
   return (
     <>
-      <header className="fixed w-full bg-white/20 backdrop-blur-lg z-50 h-20 p-4">
+      <header className="fixed w-full bg-white/20 backdrop-blur-lg z-50 p-4">
         <div className="font-londrina-solid-light flex flex-row justify-between items-center">
         {/* My Logo */}
         <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center justify-start h-full "
+            className="flex items-center justify-start items-center h-full "
         >
             <Link href="#" className="block">
             <Image
@@ -54,7 +54,7 @@ const Header = () => {
             >
                 <Link
                 href={`#${item.toLowerCase()}`}
-                className="px-3 py-2 text-lg font-nanum text-gray-700 hover:text-gray-900 hover:bg-white/30 rounded-lg "
+                className="px-3 py-2 text-lg text-gray-700 hover:text-gray-900 hover:bg-white/30 rounded-lg "
                 >
                 {item}
                 </Link>
@@ -103,7 +103,7 @@ const Header = () => {
                     <Link
                       href={`#${item.toLowerCase()}`}
                       onClick={handleNavClick}
-                      className="block px-4 py-3 text-lg font-nanum text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-200"
+                      className="block px-4 py-3 text-lg font-londrina-solid-light text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-200"
                     >
                       {item}
                     </Link>

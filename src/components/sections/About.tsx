@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="min-h-screen py-20 px-4 sm:px-6">
+    <section id="about" className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <SectionTitle 
           title="About Me" 
@@ -18,7 +18,7 @@ const About = () => {
         <div className="grid grid-cols-12 gap-4 sm:gap-8">
           <AnimatedDiv delay={0.2} direction="left" className="col-span-12 md:col-span-4">
             <motion.div 
-              className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[400px] sm:h-[500px] md:h-[600px] sticky top-8 mx-auto max-w-sm md:max-w-none"
+              className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white h-[300px] sm:h-[400px] md:h-[500px] sticky top-8 mx-auto "
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -27,7 +27,7 @@ const About = () => {
                 alt="Aria Cui"
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="100vw, 33vw"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -35,30 +35,30 @@ const About = () => {
           </AnimatedDiv>
           
           <AnimatedDiv delay={0.3} direction="right" className="col-span-12 md:col-span-8">
-            <Card className="p-0 h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
+            <Card className="p-0 h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden">
               <div className="p-4 sm:p-6 md:p-8 h-full overflow-y-auto">
-                <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
+                <div className="prose prose-xs sm:prose-sm md:prose-base max-w-none">
                   
                   {/* title */}
                   <div className="mb-4 sm:mb-6">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 flex items-center">
+                    <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 flex items-center">
                       👋 <span className="ml-2">Hi, I&apos;m Aria</span>
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-                      A passionate <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded font-medium">Full Stack Developer</span> with a Master&apos;s degree in Computer Science (GPA 4.0, Phi Kappa Phi) from the University of the Pacific.
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+                      A passionate <span className="bg-blue-100 text-blue-800 px-1 rounded font-medium">Full Stack Developer</span> with a Master&apos;s degree in Computer Science (GPA 4.0, Phi Kappa Phi) from the University of the Pacific.
                     </p>
                   </div>
 
                   {/* subtitle */}
-                  <div className="bg-gray-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
-                    <p className="text-gray-700 italic text-lg leading-relaxed m-0">
+                  <div className="bg-gray-50 border-l-4 border-blue-500 p-2 mb-6 rounded-r-lg">
+                    <p className="text-gray-700 italic text-base leading-relaxed m-0">
                       &quot;I&apos;m passionate about building thoughtful, scalable applications that make technology more human.&quot;
                     </p>
                   </div>
 
                   {/* skills */}
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                    <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                       💻 <span className="ml-2">Technical Expertise</span>
                     </h2>
                     <p className="text-gray-700 leading-relaxed mb-3">
@@ -75,7 +75,7 @@ const About = () => {
 
                   {/* security */}
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                    <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                       🔐 <span className="ml-2">Security Focus</span>
                     </h2>
                     <p className="text-gray-700 leading-relaxed">
@@ -85,7 +85,7 @@ const About = () => {
 
                   {/* work */}
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                    <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                       🤝 <span className="ml-2">Professional Experience</span>
                     </h2>
                     <p className="text-gray-700 leading-relaxed">
@@ -95,7 +95,7 @@ const About = () => {
 
                   {/* available */}
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                    <h2 className="text-xl font-semibold text-green-800 mb-2 flex items-center">
+                    <h2 className="text-lg font-semibold text-green-800 mb-2 flex items-center">
                       🚀 <span className="ml-2">Currently Available</span>
                     </h2>
                     <p className="text-green-700 leading-relaxed m-0">
@@ -105,7 +105,7 @@ const About = () => {
 
                   {/* hobby */}
                   <div className="mb-4">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                    <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
                       🎮 <span className="ml-2">Beyond Coding</span>
                     </h2>
                     <p className="text-gray-700 leading-relaxed">
